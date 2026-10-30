@@ -1,0 +1,17 @@
+^\.git$
+^\.github$
+^\.gitignore$
+^.*\.Rproj$
+^\.Rproj\.user$
+^local_validation$
+^review$
+^validation$
+^cran-comments\.md$
+^CITATION\.cff$
+^LICENSE\.md$
+^CONTRIBUTING\.md$
+^__MACOSX$
+^\.DS_Store$
+^robart_.*\.tar\.gz$
+^robart_.*\.zip$
+^.*\.Rcheck$

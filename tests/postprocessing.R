@@ -1,0 +1,28 @@
+library(robart)
+local({
+  same <- function(a,b,tol=1e-12) isTRUE(all.equal(a,b,tolerance=tol,check.attributes=FALSE))
+  sigma <- getFromNamespace(".robart_retained_sigma_for_gaussian","robart")
+  cpo <- getFromNamespace(".robart_log_cpo_for_gaussian","robart")
+  set.seed(22L); before <- .Random.seed
+  got <- sigma(list(sigma=seq_len(11L)/10),3L,2L,3L,1,.5,0,FALSE,NA_real_)
+  stopifnot(same(got,c(.5,.8,1.1)))
+  got <- sigma(list(sigma=seq_len(3L)/10),3L,0L,1L,1,.5,0,FALSE,NA_real_)
+  stopifnot(same(got,c(.1,.2,.3)))
+  got <- sigma(list(sigma_last=.5),3L,2L,3L,0,.5,0,FALSE,NA_real_)
+  stopifnot(same(got,rep(.5,3L)))
+  got <- sigma(list(sigma_last=.7),3L,0L,1L,0,.5,1,TRUE,.7)
+  stopifnot(same(got,c(.5,.7,.7)))
+  mu <- matrix(c(9,8.8,9.2,11,11.2,10.8),3L,2L)
+  y <- c(9,11); sd <- c(.5,.8,1.1); weights <- c(1,2)
+  ell <- sapply(seq_along(y),function(i)
+    -.5*log(2*pi)-log(sd*weights[i])-.5*((y[i]-mu[,i])/(sd*weights[i]))^2)
+  independent <- vapply(seq_len(ncol(ell)),function(i){
+    z <- -ell[,i]; m <- max(z); log(nrow(ell))-m-log(sum(exp(z-m)))
+  },numeric(1L))
+  stopifnot(same(cpo(ell),independent))
+  stopifnot(same(cpo(matrix(-10000,3L,2L)),c(-10000,-10000)))
+  bad <- ell; bad[1L,1L] <- -Inf
+  stopifnot(identical(cpo(bad)[1L],-Inf),same(cpo(bad)[2L],independent[2L]))
+  stopifnot(identical(before,.Random.seed))
+  cat("Independent Gaussian postprocessing, index and known-sigma contracts passed.\n")
+})

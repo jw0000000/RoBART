@@ -1,0 +1,15 @@
+name,symbol,arity
+_robart_cgbart_canonical_coordinates,_robart_cgbart_canonical_coordinates,2
+_robart_cgbart,_robart_cgbart,60
+_robart_cgbart_profile_snapshot,_robart_cgbart_profile_snapshot,11
+_robart_cwbart,_robart_cwbart,31
+cabart,cabart,31
+cdraw_lambda_i,cdraw_lambda_i,4
+clbart,clbart,24
+cpbart,cpbart,27
+cpwbart,cpwbart,3
+crtgamma,crtgamma,4
+crtnorm,crtnorm,4
+mc_cores_openmp,mc_cores_openmp,0
+_robart_formal_tree_audit,_robart_formal_tree_audit,6
+_robart_formal_cut_audit,_robart_formal_cut_audit,8

@@ -1,0 +1,45 @@
+# Package-owned namespace. Public API and S3 registration are checked in tests/.
+
+export(bartModelMatrix)
+export(gbart)
+export(wbart)
+importFrom(Rcpp,evalCpp)
+importFrom(nnet,class.ind)
+importFrom(parallel,detectCores)
+importFrom(stats,ar)
+importFrom(stats,coef)
+importFrom(stats,dbinom)
+importFrom(stats,dnorm)
+importFrom(stats,lm)
+importFrom(stats,plogis)
+importFrom(stats,pnorm)
+importFrom(stats,predict)
+importFrom(stats,qchisq)
+importFrom(stats,qlogis)
+importFrom(stats,qnorm)
+importFrom(stats,quantile)
+importFrom(stats,residuals)
+importFrom(stats,runif)
+importFrom(stats,sd)
+importFrom(stats,vcov)
+importFrom(survival,Surv)
+importFrom(survival,survreg)
+importFrom(tools,psnice)
+useDynLib(robart, .registration = TRUE)
+
+# Centered roBART convenience interface through gbart
+export(robart)
+export(robart_control)
+S3method(print,robart)
+S3method(predict,robart)
+
+# Gaussian/probit presentation and lossless legacy access
+export(robart_flat)
+export(robart_trace)
+S3method(summary,robart)
+S3method(print,summary.robart)
+
+# Static legacy methods are registered only with an explicit rotated-state guard.
+S3method(predict,wbart)
+S3method(predict,pbart)
+S3method(predict,lbart)

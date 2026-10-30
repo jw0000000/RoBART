@@ -1,0 +1,31 @@
+Package: robart
+Title: Bayesian Additive Regression Trees with Tree-Specific Rotations
+Version: 1.0.1
+Authors@R: c(
+    person("Jeongung", "Heo", email = "jwheo@yonsei.ac.kr",
+           role = c("aut", "cre")),
+    person("Robert", "McCulloch", role = c("ctb", "cph"),
+           comment = "Original BART implementation"),
+    person("Rodney", "Sparapani", role = c("ctb", "cph"),
+           comment = "Original BART implementation"),
+    person("Robert", "Gramacy", role = c("ctb", "cph"),
+           comment = "Inherited BART latent-variable routines"),
+    person("Charles", "Spanbauer", role = c("ctb", "cph"),
+           comment = "Inherited BART native routines"))
+Description: Fits Bayesian additive regression trees with tree-specific
+    orthogonal rotations, centered angle proposals and joint cutpoint retuning.
+    Provides Gaussian and Bernoulli-probit convenience interfaces and a common
+    interface with a finite-mixture Bernoulli-logit implementation. Includes
+    posterior draws, diagnostics and versioned state snapshots. The implementation
+    builds on 'BART' as described by Sparapani, Spanbauer and McCulloch (2021)
+    <doi:10.18637/jss.v097.i01>. Prediction for rotated fits currently uses inputs
+    supplied during fitting; arbitrary new-data prediction is not provided.
+License: GPL (>= 2)
+Encoding: UTF-8
+Depends: R (>= 3.6.0)
+Imports: nnet, parallel, Rcpp, stats, survival, tools
+LinkingTo: Rcpp, RcppEigen
+SystemRequirements: C++17
+NeedsCompilation: yes
+URL: https://github.com/jw0000000/RoBART
+BugReports: https://github.com/jw0000000/RoBART/issues

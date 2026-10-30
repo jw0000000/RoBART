@@ -1,0 +1,30 @@
+# R session and editor files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Operating-system metadata
+.DS_Store
+__MACOSX/
+._*
+
+# Compiled objects and installed libraries
+*.o
+*.so
+*.dll
+*.a
+*.dylib
+src/symbols.rds
+00LOCK*/
+
+# Generated package builds and check output
+/build/
+/robart_*.tar.gz
+/robart_*.zip
+*.Rcheck/
+
+# Local validation work; package tests remain tracked under tests/
+/local_validation/
+/review/
+/validation/

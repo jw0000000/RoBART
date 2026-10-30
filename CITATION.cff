@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: >-
+  If you use RoBART, please cite this software and acknowledge the original
+  BART implementation listed in references. In R, use citation("robart").
+type: software
+title: "RoBART: Bayesian Additive Regression Trees with Tree-Specific Rotations"
+version: "1.0.1"
+authors:
+  - family-names: Heo
+    given-names: Jeongung
+    email: jwheo@yonsei.ac.kr
+license: GPL-2.0-or-later
+abstract: >-
+  An R package for Bayesian additive regression trees with tree-specific
+  orthogonal rotations, Gaussian and Bernoulli-probit convenience interfaces,
+  posterior draws, sampling diagnostics, and versioned state snapshots.
+keywords:
+  - Bayesian additive regression trees
+  - Bayesian nonparametrics
+  - orthogonal rotations
+  - R
+references:
+  - type: article
+    title: >-
+      Nonparametric Machine Learning and Efficient Computation with Bayesian
+      Additive Regression Trees: The BART R Package
+    authors:
+      - family-names: Sparapani
+        given-names: Rodney
+      - family-names: Spanbauer
+        given-names: Charles
+      - family-names: McCulloch
+        given-names: Robert
+    journal: Journal of Statistical Software
+    volume: "97"
+    issue: "1"
+    start: 1
+    end: 66
+    year: 2021
+    doi: 10.18637/jss.v097.i01
+repository-code: https://github.com/jw0000000/RoBART

@@ -1,0 +1,13 @@
+citHeader("To cite RoBART and acknowledge the BART implementation it builds on:")
+bibentry(bibtype = "Manual",
+  title = "RoBART: Bayesian Additive Regression Trees with Tree-Specific Rotations",
+  author = person("Jeongung", "Heo", email = "jwheo@yonsei.ac.kr"),
+  year = "2026",
+  note = paste("R package version", meta$Version))
+bibentry(bibtype = "Article",
+  title = "Nonparametric Machine Learning and Efficient Computation with Bayesian Additive Regression Trees: The BART R Package",
+  author = c(person("Rodney", "Sparapani"), person("Charles", "Spanbauer"),
+             person("Robert", "McCulloch")),
+  journal = "Journal of Statistical Software", year = "2021",
+  volume = "97", number = "1", pages = "1--66",
+  doi = "10.18637/jss.v097.i01")

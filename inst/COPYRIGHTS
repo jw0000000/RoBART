@@ -1,0 +1,44 @@
+roBART source provenance and licensing
+====================================
+RoBART author and maintainer: Jeongung Heo <jwheo@yonsei.ac.kr>.
+Public-distribution author and contact metadata updated on 2026-10-30.
+
+This package contains source code derived from the BART R package, not merely
+an implementation inspired by its paper. Original per-file copyright and GPL
+notices remain in place. The incorporated notices identify Robert McCulloch,
+Rodney Sparapani, Robert Gramacy and Charles Spanbauer. The upstream BART
+metadata additionally credits Matthew Pratola, Martyn Plummer, Nicky Best,
+Kate Cowles and Karen Vines. Only the four contributors directly identified by incorporated copyright
+notices are listed as inherited-code contributors/copyright holders in this
+fork's Authors@R. Additional upstream names are recorded here for provenance,
+not asserted to have contributed to every included file or to roBART's changes.
+None of this attribution implies endorsement of the modifications.
+
+The exact historical BART fork version/commit has not been established. The
+current BART metadata (2.9.10, 2026-01-24) was consulted to verify attribution,
+not to claim that this is the version from which this code was originally copied.
+Sources: https://CRAN.R-project.org/package=BART
+         https://github.com/cran/BART/blob/master/DESCRIPTION
+Reference: Sparapani, Spanbauer and McCulloch (2021), JSS 97(1), 1-66,
+           doi:10.18637/jss.v097.i01.
+
+Package license: GNU GPL version 2 or any later version, consistent with the
+incorporated BART notices. These notices were NOT replaced by a new exclusive
+copyright claim. See LICENSES/GPL-2.txt for the GPL version 2 text. External
+Rcpp/RcppEigen and other dependencies retain their own licenses; their source
+is not re-vendored here. Compiled development test shims are not included in
+the package.
+
+Modifications by Jeongung Heo include explicit source-owned native
+registration/bridges, package-specific native lookup, guarded S3 dispatch,
+documentation and package tests, as well as full recursive prior, strict admissibility,
+midpoint/hold/failure cutpoint proposals, target-consistent birth/death, DART
+terminal correction, and full-prior depth-hyperparameter updates. These are
+modifications to the inherited sampler, not a claim of upstream equivalence.
+All inherited copyright notices remain. GPL (>= 2) applies.
+
+The public 1.0.1 distribution identifies Jeongung Heo as the author and
+maintainer of the RoBART changes. Original BART copyright and license notices
+remain in the inherited source files; these contributors are not presented
+as authors of every RoBART modification. The public documentation and author
+update does not change the sampler's model, public R arguments or defaults.
